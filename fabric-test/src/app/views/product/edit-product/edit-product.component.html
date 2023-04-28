@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-content style="height: 100%;">
+
+    <form [formGroup]="EditProductForm" style="width: 90%;margin: auto;height: 96.5vh;">
+      <h1>Edit product</h1>
+      <mat-grid-list cols="12" rowHeight="100px" gutterSize="10">
+        <mat-grid-tile [colspan]="6" [rowspan]="1">
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required>
+            <span style="color:red">{{ nameError }}</span>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="6" [rowspan]="1">
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>No of items</mat-label>
+            <input matInput formControlName="noOfItems" required type="number">
+            <span style="color:red">{{ itemError }}</span>
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+      </mat-grid-list>
+      <mat-grid-list cols="12" rowHeight="100px">
+
+        <mat-grid-tile [colspan]="12" [rowspan]="1">
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" required></textarea>
+            <span style="color:red">{{ descriptionError }}</span>
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+      <div style="margin:2rem 2rem;display: flex;justify-content: end;">
+        <mat-button-toggle style="width: 8rem;background:rgb(0, 202, 0);color: white;border-radius: 8px;"
+          (click)="EditProduct()">Edit</mat-button-toggle>
+      </div>
+    </form>
+
+  </mat-card-content>
+</mat-card>

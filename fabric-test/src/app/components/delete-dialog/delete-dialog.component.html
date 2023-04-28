@@ -1,0 +1,16 @@
+<div style="height: 100%;
+/* padding: 3rem; */
+text-align: center;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;gap:2rem">
+  <h1>Are you sure you want to delete this product?</h1>
+  <div style="display: flex; justify-content: space-between;width: 60%;">
+    <button style="padding: 1rem 3rem;color: white; background: red;border: none; border-radius: 8px;"
+      (click)="DeleteItem(data.id)">Yes</button>
+    <button style="padding: 1rem 3rem;color: black; background: rgb(240, 240, 240);border: none; border-radius: 8px;"
+      (click)="closeDialog()">No</button>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<mat-drawer-container class="example-container">
+  <!-- <mat-drawer mode="side" opened style="width: 15%">
+    <mat-list>
+      <mat-list-item routerLink="view-product"
+        ><a>View Products</a></mat-list-item
+      >
+      <mat-list-item routerLink="add-product"
+        ><a>Add Products</a></mat-list-item
+      >
+      <mat-list-item (click)="Logout()">Logout</mat-list-item>
+    </mat-list>
+  </mat-drawer> -->
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Fabric</h1>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container">
+    
+    <mat-sidenav style="width:15rem"
+      mode="side"
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <mat-list>
+          <mat-list-item routerLink="view-product" class="cursor-pointer"
+            ><a>View Products</a></mat-list-item
+          >
+          <mat-list-item routerLink="add-product" class="cursor-pointer"
+            ><a>Add Products</a></mat-list-item
+          >
+          <mat-list-item (click)="Logout()">Logout</mat-list-item>
+        </mat-list>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="Contant">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- <mat-drawer-content>
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Fabric</h1>
+    </mat-toolbar>
+    <div class="Contant">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content> -->
+</mat-drawer-container>
